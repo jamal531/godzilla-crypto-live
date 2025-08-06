@@ -1,0 +1,8 @@
+{
+  "name": "godzilla-crypto-live",
+  "version": "1.0.0",
+  "description": "Netlify-ready Godzilla Crypto Predictor",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
