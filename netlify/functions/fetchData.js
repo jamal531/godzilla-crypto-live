@@ -3,16 +3,13 @@ const fetch = require('node-fetch');
 
 exports.handler = async function () {
     try {
-        const apiKey = process.env.COINGECKO_API_KEY; // Netlify env variable
+const API_KEY = process.env.COINGECKO_API_KEY;
 
-        // Coin list
-        const coins = [
-            { id: 'bitcoin', symbol: 'BTC' },
-            { id: 'ethereum', symbol: 'ETH' },
-            { id: 'binancecoin', symbol: 'BNB' },
-            { id: 'dogecoin', symbol: 'DOGE' },
-            { id: 'solana', symbol: 'SOL' }
-        ];
+const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd`, {
+  headers: {
+    'x-cg-pro-api-key': API_KEY
+  }
+});
 
         // Fetch data for all coins
         const results = {};
